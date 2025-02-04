@@ -24,7 +24,7 @@ public class Circle extends Shape {
 	}
 	
 	@Override
-	public Double area() {
-		return null;
+	public double area() {
+		return Math.PI * Math.pow(radius, 2);
 	}
 }
