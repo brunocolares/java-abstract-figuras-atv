@@ -24,17 +24,17 @@ public class Program {
 			char shape = sc.next().charAt(0);
 			sc.nextLine();
 			System.out.print("Color (BLACK/BLUE/RED): ");
-			String color = sc.nextLine();
+			Color color = Color.valueOf(sc.next());
 			if(shape == 'r') {
 				System.out.print("Width: ");
 				double width = sc.nextDouble();
 				System.out.print("Height: ");
 				double height = sc.nextDouble();
-				shapes.add(new Rectangle(Color.valueOf(color), width, height));
+				shapes.add(new Rectangle(color, width, height));
 			} else if(shape == 'c') {
 				System.out.print("Radius: ");
 				double radius = sc.nextDouble();
-				shapes.add(new Circle(Color.valueOf(color), radius));
+				shapes.add(new Circle(color, radius));
 			} else {
 				System.out.println("Opção inválida.");
 			}
@@ -42,7 +42,7 @@ public class Program {
 		System.out.println();
 		System.out.println("SHAPE AREAS:");
 		for(Shape shape : shapes) {
-			
+			System.out.println(String.format("%.2f", shape.area()));
 		}
 	}
 
